@@ -1,9 +1,5 @@
 console.log("Arrays");
 
-/*
-
-*/
-
 // 1.get duplicates elements from two array
 const arr1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 const arr2 = ['h', 'b', 'g', 'i', 'e', 'f', 'k', 'l'];
@@ -68,7 +64,16 @@ console.log(resArr);
 let result = resArr.find(checkNames);
 
 // 6.Difference between map and forEach method
-
+// foreach and map both takes a callback and run it against every element on the array 
+// But map method generate a new array based on your existing array which forEach method dosent return
+let test = [1, 2, 3, 4, 5, 6];
+test.forEach( function(elem) {
+    console.log(elem * 10);
+});
+let forEachArray = test.forEach(elem => elem * 10);
+console.log(forEachArray);
+let mappedArray = test.map(elem => elem * 10);
+console.log(mappedArray);
 
 // 7.What is Spread operator, show example of Concating two array using spread operator.
 // Allows expression to be expanded in places where multiple args, variables are expected
