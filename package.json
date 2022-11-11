@@ -1,0 +1,23 @@
+{
+  "name": "arrayss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnkitGaikwad/gitPR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnkitGaikwad/gitPR/issues"
+  },
+  "homepage": "https://github.com/AnkitGaikwad/gitPR#readme",
+  "dependencies": {
+    "async": "^3.2.4"
+  }
+}
