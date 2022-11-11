@@ -18,20 +18,52 @@ duplicates = arr1.filter( function(val1) {
 console.log(duplicates);
 
 // 2.How to run multiple function parallely
-let func1  = async() => {
+
+// let func1  = async() => {
+//     console.log("Function One started executing");
+//     setTimeout(() => {
+//         console.log("Function One executed");
+//     },4000);
+// };
+// let func2  = async() => {
+//     console.log("Function Two started executing");
+//     setTimeout(() => {
+//         console.log("Function Two executed");
+//     },2000);
+// };
+// func1();
+// func2();
+
+// promise.all();
+// JS is single threaded so it cannot execute in parallel
+// But we can run in concurrent mode i.e. after starting first promise instead of waiting for it to resolve
+// we start executing a new promise and then collect the results of both promises together
+const promise1 = Promise.resolve(44);
+const promise2 = 24;
+const promise3 = new Promise((resolve, reject) => {
+    resolve("Hi");
+});
+// Promise.all([promise1, promise2, promise3])
+//     .then((values) => {console.log(values);});
+
+// Async await
+async function func1() {
     console.log("Function One started executing");
-    setTimeout(() => {
-        console.log("Function One executed");
-    },4000);
-};
-let func2  = async() => {
+    return new Promise((resolve, reject) => {
+        resolve("Hi there");
+    });
+}
+async function func2() {
     console.log("Function Two started executing");
-    setTimeout(() => {
-        console.log("Function Two executed");
-    },2000);
+    return new Promise((resolve, reject) => {
+        resolve("Hello there");
+    });
+}
+let run = async () => {
+    await Promise.all([func1(), func2()])
+    .then((values) => {console.log(values);});
 };
-func1();
-func2();
+run();
 
 // 3.First element,last element of an array, index of an element in the array
 const names = ["Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aziz", "Azlan", "Azzam", "Azzedine", "Ben", "Carol", "David"];
